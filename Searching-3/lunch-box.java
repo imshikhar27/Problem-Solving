@@ -18,16 +18,19 @@ public class Main
 	     freq[ele[i]]++;
 	    }
 	    Arrays.sort(freq);
-	    int s=0,e=n;
+	    int s=0,e=n/a,ans=0;
 	    while(s<e)
 	    {
 	        int mid=(s+e)/2;
 	        if(valid(mid,freq,a))
-	         s=mid;
+		{
+	         ans=mid;		
+	         s=mid+1;
+		}
 	        else 
 	         e=mid-1;
 	    }
-		System.out.println(s);
+		System.out.println(ans);
 	}
 	public static boolean valid(int mid,int[] freq,int a)
 	{
